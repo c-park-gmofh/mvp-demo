@@ -2,6 +2,13 @@
 MVC, MVP, MVVMを比較するためのtodoアプリ
 
 
+# インストール
+## Java 17
+```
+brew install openjdk@17
+```
+その後、IntelliJ IDEAコミュニティバージョンで開いてMavenインストール
+
 # デザインパターン: MVC, MVP, MVVM の比較
 
 ## 1. MVC (Model-View-Controller)
