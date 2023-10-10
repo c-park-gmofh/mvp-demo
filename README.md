@@ -10,6 +10,20 @@ MVC, MVP, MVVMを比較するためのtodoアプリ
 - **View**: ユーザーインターフェース(UI)を管理します。
 - **Controller**: ユーザーのアクションに基づいてModelを更新し、これらの変更をViewに反映します。
 
+## MVC (Model-View-Controller)
+```
+mvp-demo/
+│
+├── model/
+│   └── TodoModel.java
+│
+├── view/
+│   └── TodoView.java
+│
+└── controller/
+    └── TodoController.java
+```
+
 **特徴**:
 - ControllerはModelとViewの間の通信を仲介します。
 - Viewは多くの場合、Modelを直接参照します。
@@ -21,6 +35,19 @@ MVC, MVP, MVVMを比較するためのtodoアプリ
 - **View**: ユーザーインターフェースを管理します。MVPでは、Viewは通常インターフェースを実装します。
 - **Presenter**: ユーザーのアクションに基づいてModelを更新し、これらの変更をViewに反映します。
 
+```
+mvp-demo/
+│
+├── model/
+│   └── TodoModel.java
+│
+├── view/
+│   └── TodoViewMVP.java
+│
+└── presenter/
+    └── TodoPresenter.java
+```
+
 **特徴**:
 - PresenterはModelとViewの間の通信を仲介します。通常、ViewとPresenterは一対一の関係を持ちます。
 - ViewはModelを直接参照しません。すべての通信はPresenterを通して行われます。
@@ -30,6 +57,19 @@ MVC, MVP, MVVMを比較するためのtodoアプリ
 - **Model**: データとビジネスロジックを管理します。
 - **View**: ユーザーインターフェースを管理します。
 - **ViewModel**: Viewに表示されるデータを保持し、データバインディングを使用してViewと同期します。
+
+```
+mvp-demo/
+│
+├── model/
+│   └── TodoModel.java
+│
+├── view/
+│   └── TodoViewMVVM.java
+│
+└── viewmodel/
+    └── TodoViewModel.java
+```
 
 **特徴**:
 - **データバインディング**: MVVMの特徴です。データバインディングにより、ViewModelのデータが変更されると、Viewが自動的に更新されます。逆に、ViewのユーザーアクションはViewModelを自動的に更新します。
@@ -49,5 +89,16 @@ ViewModelはViewとModelの間に位置し、データバインディングを�
 - **MVC**: ViewはModelを直接参照し、Controllerが更新を管理します。
 - **MVP**: ViewはModelを直接参照しません。PresenterがViewとModelの間のすべての通信を管理します。
 - **MVVM**: データバインディングにより、ViewModelのデータの変更がViewを自動的に更新し、ViewのユーザーアクションがViewModelを自動的に更新します。
+
+```
+MVC:
+View <--> Controller <--> Model
+
+MVP:
+View <--> Presenter <--> Model
+
+MVVM:
+View <--> ViewModel <--> Model
+```
 
 特定の問題や状況に応じて、これらのパターンを適切に選択して適用することが重要です。
